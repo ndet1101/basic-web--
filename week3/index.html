@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html> 
+    <header>
+        <title>เรียนสัปดาห์ที่ 3</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+            href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" 
+            rel="stylesheet">
+        <link rel="stylesheet"href="./style.css">
+    </header>
+    <body>
+        <div>
+            <h1>บทเรียนเรื่อง Input</h1>
+            <p id="show-text">ข้อความที่อ่านได้</p>
+            <input type="text" placeholder="กรอกสิ" id="text-input">
+            <button id="read-text" onclick="readText()">อย่ากด</button>
+
+            <h1>บทเรียนเรื่อง select</h1>
+            <select id="fruit-select">
+                <option value="-"disabled selected>เลือกผลไม้</option>
+                <option value="apple">แอปเปิ้ล</option>
+                <option value="banana">กล้วย</option>
+                <option value="orange">ส้ม</option>
+            </select>
+
+             <h1>selectสุ่มmeme</h1>
+            <select id="select-imgmem">
+                <option value="-"disabled selected>กรุณาสุ่มรูป</option>
+                <option value="nig.jfif">กล้า</option>
+                <option value="ฮิลมัง.jpg">ไดโน</option>
+                <option value="สมิง.jpg">ของรักของข้า</option>
+                <option value="sukuna.jpg">ราชาคำสาป</option>
+            </select>
+            <img src="nig.jfif" id="selected-mem" width="500" height="600">
+
+        </div>
+        <script>
+            function readText(){ 
+                const textInput = document.getElementById("text-input")
+                const msg = textInput.value
+                const showText = document.getElementById("show-text")
+                showText.innerText = "ข้อความที่อ่านได้: " + msg
+            }
+
+            const textInput = document.getElementById("text-input")
+            textInput.addEventListener("change",function(){})
+                
+            const selectText = document.getElementById("fruit-select")
+            selectText.addEventListener("change",function(){
+                if(this.value === "A"){
+                    alert("คุณเลือก A")
+                } else {
+                    alert("คุณเลือก"+ this)
+                }
+            })
+
+            const selectImgMem = document.getElementById('select-imgmem')
+            selectImgMem.addEventListener("change", function() {
+                const selectedMem = document.getElementById('selected-mem')
+                selectedMem.src = this.value
+            })
+        </script>
+    </body>
+</html>
