@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>แบบฝึกหัด</title>
+    </header>
+    <body>
+        <div>
+            <input id="age-input" placeholder="กรุณากรอกอายุ">
+            
+            <button onclick="validateAge ()">ตวรจสอบ</button>
+        </div>
+        <h1 id="show-text"></h1>
+        <script>
+            function validateAge(){
+                const ageInput = document.getElementById('age-input')
+                const showText = document.getElementById('show-text')
+                const age = Number(ageInput.value)
+                if (age >= 60){
+                    showText.innerText = 'วัยสูงอายุ'
+            } else if (age >= 25){
+                    showText.innerText = 'วัยทำงาน'
+            } else if (age >= 13){
+                    showText.innerText = 'วัยรุ่น'
+            } else {
+                    showText.innerText = 'วัยเด็ก'
+            }
+            }
+        </script>
+    </body>
+</html>
