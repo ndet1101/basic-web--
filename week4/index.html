@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เตือนพักสายตา</title>
+</head>
+<body>
+
+<h2>ระบบเตือนพักสายตา</h2>
+<button onclick="startReminder()">เริ่มเตือนพักสายตา</button>
+<button onclick="stopReminder()">หยุดเตือน</button>
+
+<script>
+  let intervalId;
+
+  function startReminder() {
+    // กันกดซ้ำ
+    if (intervalId) return;
+
+    intervalId = setInterval(() => {
+      let result = confirm("คุณควรพักสายตาสักครู่ ต้องการหยุดการแจ้งเตือนหรือไม่?");
+
+      if (result) {
+        // กด OK → หยุด
+        clearInterval(intervalId);
+        intervalId = null;
+        alert("หยุดการแจ้งเตือนแล้ว");
+      }
+      // ถ้ากด Cancel → ไม่ต้องทำอะไร มันจะวนต่อเอง
+    }, 2 * 60 * 1000); // 2 นาที
+
+    alert("เริ่มระบบเตือนแล้ว");
+  }
+
+  function stopReminder() {
+    clearInterval(intervalId);
+    intervalId = null;
+    alert("หยุดการแจ้งเตือนแล้ว");
+  }
+</script>
+</body>
+</html>
