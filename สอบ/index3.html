@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>นับคลิก</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>นับจำนวนคลิก</h2>
+
+    <button onclick="countClick()">ถ้าว่างก็กดเลย</button>
+
+    <h3 id="clickResult">กดทำไมตั้ง 0 ครั้ง</h3>
+
+    <script>
+        let count = 0;
+
+        function countClick() {
+            count++;
+            document.getElementById("clickResult").innerText =
+                "กดไปแล้ว " + count + " ครั้ง";
+        }
+    </script>
+
+</body>
+
+</html>

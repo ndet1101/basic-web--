@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>คำนวณอายุ</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>คำนวณอายุ</h2>
+
+    <input type="number" id="birthYear" placeholder="กรอกปีเกิด">
+    <button onclick="calculateAge()">คำนวณ</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function calculateAge() {
+            let year = document.getElementById("birthYear").value;
+            let currentYear = new Date().getFullYear();
+
+            if (year === "" || year > currentYear) {
+                document.getElementById("result").innerText = "กรุณากรอกปีให้ถูกต้อง";
+                return;
+            }
+
+            let age = currentYear - year;
+            document.getElementById("result").innerText = "คุณอายุ " + age + " ปี";
+        }
+    </script>
+
+</body>
+</html>
